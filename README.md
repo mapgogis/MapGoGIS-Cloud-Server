@@ -1,4 +1,4 @@
-mobileserver
+MapGoGIS-Cloud-Server
 ============
 
-mapgogis mobile server
+MapGoGIS-Cloud-Server
