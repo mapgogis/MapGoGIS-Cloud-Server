@@ -81,7 +81,7 @@ $user->checkUser();
             <p class="copyright">2013 MapGoGIS - All rights reserved</p>
 
             <div class="btns">
-                <a href="#" class="gitHub">Download Github</a> 
+                <a href="https://github.com/mapgogis/MapGoGIS-Cloud-Server" class="gitHub">Download Github</a> 
                 <a href="https://itunes.apple.com/tw/app/mapgo-gis-data-collection/id654912231?mt=8" target="_blank" class="AppStore">AppStore</a>
                 <a href="https://twitter.com/mapgogis" class="Twitter">Twitter</a>
             </div><!-- /btns-->
