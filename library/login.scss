@@ -1,0 +1,160 @@
+@import "library" ;
+
+/*** BASIC ***/
+
+body {
+	
+	@include linear-gradient(darken($colorFF , 10%), darken($colorFF , 1%)); 
+	
+}
+
+
+/*** LOGINWRAP ***/ 
+  
+#loginWrap {
+	
+	background: darken($colorFF , 1%);
+	height: auto; 
+	left: 50%;
+	margin-left: -$gw-column * 3.5;
+	min-height: $gw-column * 2;
+	padding: $gw-gutter ;
+	position: absolute;
+	top: 50%;
+	width: $gw-column * 7;
+	
+	@include border-radius();
+	@include box-shadow(0 0 2px 2px rgba(0,0,0,0.1));
+
+	.loginHeader {
+		
+		float: left;
+		width: $gw-column * 3;
+		
+	}
+	
+	h1.logo { 
+		
+		color: darken($color01, 15%);
+		font-family: 'Roboto', serif;
+		font-weight: 300;
+		text-align: center;
+		text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+		margin-top: 1em;
+	}
+	
+	.loginContent {
+		
+		border-left: 1px solid lighten($color99, 45%);
+		box-shadow: inset 1px 0px 0px $colorFF;
+		box-sizing: border-box;
+		float: left;
+		height: 100%;
+		min-height: $gw-column * 2;
+		padding: 0 $gw-gutter;
+		position: relative;
+		overflow: hidden;  
+		width: $gw-column * 4 ;
+	}
+	
+	h2 {
+		
+		color: darken($color01, 15%);
+		font-size: $fontL;
+		padding-top: 1em;
+	}
+	
+	p {
+		color: lighten($color99 , 20%);
+		font-size: $fontS;
+	}
+	
+	a.goRegister {
+		
+		color: lighten($color99 , 20%);
+		display: inline;
+		font-size: $fontS;
+		line-height: 1.5em;
+		margin-bottom: $gw-gutter;
+		margin-right: $gw-gutter * 2;
+		padding: 0.25em 0;
+		text-align: center;
+		text-decoration: none;
+		width: 100%;
+		
+		@include transition (all 0.1s);
+		
+		&:hover { color: $color01;}
+		&:active { color: $color99;}
+		
+	}
+	
+	a.backLogin {
+		
+		color: lighten($color99 , 20%);
+		display: inline-block;
+		font-size: $fontS;
+		float: right;
+		line-height: 1.5em;
+		margin-bottom: $gw-gutter;
+		padding: 0;
+		text-align: right;
+		text-decoration: none;
+		
+		@include transition (all 0.1s);
+		
+		&:hover { color: $color01;}
+		&:active { color: $color99;}
+		
+	}
+	
+	 
+}
+
+/*** LOGINWRAP FORM ***/
+   
+#loginWrap form {
+
+	margin: 0 auto;
+	width: 100%;
+
+	label{
+		
+		color: $color99;
+		height: 1.5em;
+		display: inline-block;
+		margin-top: $gw-gutter;
+		width: 100%;
+	}
+	
+	input[type="text"],
+	input[type="password"] {
+		
+		box-sizing: border-box;
+		margin: 0 auto $gw-gutter auto;
+		height: 2em; 
+		width: 100%;
+	}
+	
+	.btn01 {
+		
+		@include button($color01);
+		
+		font-size: 1em;
+		margin-bottom: $gw-gutter;
+		padding: 0.5em;
+		width: 100%; 
+	}
+	
+	
+}
+
+
+/*** ECTS ***/
+	
+	
+.errorBlk {
+	
+	margin-bottom: $gw-gutter;
+	width: 100%;
+}

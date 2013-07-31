@@ -1,0 +1,227 @@
+/*
+Created by: www.mapgogis.com 
+*/
+
+
+/*** COMPASS & UNIFORM & FONT AWESOME... IMPORT ***/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css);
+
+@import "bourbon";
+@import "compass/css3";
+@import "normalize" ; 
+@import "uniform.default" ;
+@import "font-awesome.min.css" ;
+
+/*** FONT COLOR ***/
+
+$colorFF: #FFFFFF;
+$color99: #666666;
+$color00: #000000;
+$color01: #008D7F;
+$color02: #C7A560;
+$red: #C93843;
+
+
+/*** FONT SIZE ***/
+
+$fontXL: 1.5em;
+$fontL: 1.125em;
+$fontS: 0.86em;
+$fontXS: 0.75em;
+
+
+/*** DRID COLUMN ***/
+
+$gw-column: 100px;
+$gw-gutter: 10px; 
+$gw-grid: $gw-gutter * 4;           
+
+
+/*** RADIOUS ***/
+
+$default-border-radius: 5px;
+
+   
+/*** GLOBAL ***/
+
+
+body {
+	
+	font-family: 'Roboto', serif; 
+}
+
+
+.msg {
+	
+	border-style: solid;
+	border-width: 1px;
+	box-sizing: border-box;
+	font-size: $fontXS;
+	padding: 0.5em 1em;
+	width: 100%;
+	
+	@include border-radius();
+}
+
+
+.errorBlk {
+	
+	border-color: darken($red , 20%);
+	background-color: $red;
+	color: $colorFF;
+}
+
+
+
+label.error {
+	
+	color: $red !important;
+}
+
+	
+
+/*** FORM STYLE ***/
+
+
+form {
+
+	font-family: 'Roboto', serif; 
+	
+	input[type="text"],
+	input[type="password"],
+	input[type="text"].error, 
+	input[type="pssword"].error {
+	
+	@include placeholder{ color: lighten($color99 ,15%);}
+				
+		&:focus {
+			
+			background: darken($color99 , 5%);
+			border: 1px solid darken($color99 , 10%);
+			color: $colorFF;
+		}
+	
+	}
+	
+	input[type="text"].error, 
+	input[type="pssword"].error {
+	
+		@include placeholder{ color: lighten($color99 ,15%);}
+		
+	}
+}
+
+
+/*** ALERT ***/
+
+.whiteCover {
+	
+	background: rgba(255,255,255,0.6);
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+} 
+
+.modal {
+	
+	background: $colorFF;
+	border: 1px solid lighten($color99 , 35%);
+	height: auto; 
+	left: 50%;
+	margin-left: -$gw-column * 1.5;
+	padding: $gw-gutter ;
+	position: absolute;
+	top: 50%;
+	width: $gw-column * 3;
+	
+	@include border-radius($default-border-radius);
+	@include box-shadow(0 0 2px 2px rgba(0,0,0,0.1));
+	
+	.modalHeader {
+		
+		h3 {
+			
+			color: $color01;
+			font-weight: normal;
+			margin: 0.4em 0 0.25em 0;
+			text-align: center;
+			
+		}
+	}
+	
+	.modalBody {
+		
+		font-size: $fontS;
+		min-height: 3em;
+		height: auto;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		word-wrap: break-word; 
+		word-break: normal;
+		width: $gw-column * 3;
+		
+		p {
+			
+			height: 3em;
+			width: $gw-column * 3;
+			
+		}
+	}
+	
+	.modalFooter {	
+		
+		height: 2em;
+		margin: 0 auto;
+		text-align: center;
+		
+		a.btn {
+			
+			@include button($color01);
+		
+			font-size: 1em;
+			margin-bottom: $gw-gutter;
+			padding: 0.5em;
+			text-align: center;
+			width: 95%; 
+			
+		} 
+		
+		a.btnPrimary {
+			
+			@include button($color01);
+		
+			font-size: 1em;
+			margin-bottom: $gw-gutter;
+			padding: 0.5em;
+			text-align: center;
+			width: 40%; 
+			
+		}	
+		
+		a.cancel {
+			
+			@include button($color99);
+		
+			font-size: 1em;
+			margin-bottom: $gw-gutter;
+			padding: 0.5em;
+			text-align: center;
+			width: 40%; 
+			
+		}	
+	}
+}
+
+
+
+
+
+
+
+

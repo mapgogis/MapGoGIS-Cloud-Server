@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<definitions name="Solsoft_Mapbox" targetNamespace="urn:Solsoft_Mapbox" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:Solsoft_Mapbox" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<types xmlns="http://schemas.xmlsoap.org/wsdl/" />
+<portType name="Solsoft_MapboxPort"><operation name="updateData">
+<input message="tns:updateDataRequest" />
+<output message="tns:updateDataResponse" />
+</operation>
+<operation name="updatePhoto">
+<input message="tns:updatePhotoRequest" />
+<output message="tns:updatePhotoResponse" />
+</operation>
+</portType>
+<binding name="Solsoft_MapboxBinding" type="tns:Solsoft_MapboxPort">
+<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+<operation name="updateData">
+<soap:operation soapAction="urn:Solsoft_Mapbox#Mapbox#updateData" />
+<input><soap:body use="encoded" namespace="urn:Solsoft_Mapbox" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:Solsoft_Mapbox" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+<operation name="updatePhoto">
+<soap:operation soapAction="urn:Solsoft_Mapbox#Mapbox#updatePhoto" />
+<input><soap:body use="encoded" namespace="urn:Solsoft_Mapbox" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:Solsoft_Mapbox" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+</binding>
+<service name="Solsoft_Mapbox">
+<documentation />
+<port name="Solsoft_MapboxPort" binding="tns:Solsoft_MapboxBinding"><soap:address location="http://localhost:8888/mbSoap/service.php" />
+</port>
+</service>
+<message name="updateDataRequest">
+<part name="title" type="xsd:string" />
+<part name="class" type="xsd:string" />
+<part name="express" type="xsd:string" />
+<part name="x" type="xsd:string" />
+<part name="y" type="xsd:string" />
+<part name="credate" type="xsd:string" />
+<part name="moddate" type="xsd:string" />
+</message>
+<message name="updateDataResponse">
+<part name="updateData" type="xsd:string" />
+</message>
+<message name="updatePhotoRequest">
+<part name="name" type="xsd:string" />
+<part name="note" type="xsd:string" />
+<part name="credate" type="xsd:string" />
+<part name="surveyid" type="xsd:string" />
+<part name="type" type="xsd:string" />
+<part name="file" type="xsd:string" />
+</message>
+<message name="updatePhotoResponse">
+<part name="updatePhoto" type="xsd:string" />
+</message>
+</definitions>

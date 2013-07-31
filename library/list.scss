@@ -1,0 +1,517 @@
+@import "library" ;
+
+$border: 1px solid darken($colorFF , 20%);
+
+/*** BASIC ***/
+
+body {
+
+	min-width: 768px;
+	
+	@include linear-gradient(darken($colorFF , 10%), darken($colorFF , 1%)); 
+	
+}
+ 
+#wrap {
+
+	background-color: darken(#999999 ,20%);
+	overflow: hidden;
+	position: relative;
+	min-height: 100%;
+}
+ 
+.container {
+	
+	box-sizing: padding-box;
+	margin-bottom: $gw-grid;
+	min-height: 100%;
+	overflow:auto;
+	padding: $gw-column*0.85 $gw-gutter $gw-gutter*4 $gw-gutter;
+	position: relative;
+
+}
+
+/*** HEADER ***/
+
+.header {
+	
+	height: $gw-column * 0.85 ;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	
+	@include box-shadow(0 0 1px 3px rgba(0,0,0,0.3));
+	@include linear-gradient(darken(#008D7F, 5%) , #008D7F);
+	
+	h1.logo {
+		
+		background-position: center center;
+		background-repeat: no-repeat;
+		margin: 0;
+		margin-left: $gw-gutter * 2;
+		height: $gw-column * 0.85;
+		padding: 0;
+		text-indent: -9999px;
+		width: $gw-column * 0.85 ;
+		
+		@include retina-image("../img/logo", 75px 75px);
+
+	} 	
+	
+	h2.serverName {
+		
+		color: $colorFF;
+		font-family: 'Roboto', serif;
+		font-weight: 300;
+		left: $gw-column ;
+		line-height: $gw-column * 0.75 ;
+		margin: 0;
+		margin-left: $gw-gutter * 2;
+		height: $gw-column * 0.35;
+		padding: 0; 
+		position: absolute;
+		top: 0;
+		text-align: left;
+		text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+
+	}
+	
+	p.slogan {
+		
+		color: lighten($color02, 10%); 
+		font-size: $fontXS;
+		left: $gw-column ;
+		line-height: $gw-column * 0.75 ;
+		margin-left: $gw-gutter * 2;
+		padding: 0;
+		position: absolute;
+		text-shadow: 1px 1px 0px rgba(0,0,0,0.5); 
+		top: $gw-column * 0.1;
+	}
+	
+	p.confirmation {
+	
+		background-color: #333333;
+		color: $colorFF; 
+		font-size: $fontXS;
+		line-height: 1.5em;
+		height: 1.5em;
+		margin: 0 0 0 $gw-column * -2;
+		padding: 0 $gw-gutter; 
+		position: absolute;
+		left: 50%;
+		text-align: center;
+		text-shadow: 1px 1px 0px darken($color99 , 30%);
+		top: 0;
+		width: $gw-column * 4;
+		
+		@include border-radius(0 0 5px 5px);
+		
+	}
+ 
+	div.userBar {
+		
+		bottom: 1em;
+		position: absolute;
+		right: $gw-gutter * 2;
+		text-align: right;
+		width: $gw-column * 2;
+		
+		h3 {  
+			
+			color: $colorFF;
+			font-weight: normal;
+			font-size: $fontL;
+			line-height: $gw-column ;
+			margin: 0 0 0.5em $gw-gutter * 2;
+			margin-left: $gw-gutter * 2;
+			height: $gw-column * 0.55;
+			text-shadow: 1px 1px 0px rgba(0,0,0,0.3); 
+			
+		}
+		
+		a {
+			
+			color: lighten($color02, 10%);
+			font-size: $fontXS;
+			margin-left: $gw-gutter * 2;
+			text-decoration: none;
+			text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+			
+			@include transition (all 0.3s);
+			
+			&:hover { color:$red}
+			&:active { color: $color99;}
+		}
+		
+	} 
+	
+} 
+
+/*** FOOTER ***/
+
+.footer {
+	
+	background-color: #000000;
+	bottom: 0;
+	height: 38px; 
+	padding: $gw-gutter 0 ;
+	position: absolute;
+	width: 100%;
+	
+	p.copyright {
+		
+		color: lighten($color99, 40%);
+		float: left;
+		font-size: $fontXS;
+		line-height: 38px;
+		height: 38px;
+		margin: 0 0 0 $gw-gutter;
+		text-align: center;
+		
+	}
+	
+	a.website {
+		
+		color: lighten($color99, 40%);
+		float: left;
+		font-size: $fontS;
+		line-height: 38px;
+		height: 38px;
+		margin: 0 $gw-gutter * 3 0 $gw-gutter;
+		text-decoration: none;
+		text-align: center;
+		
+		&:hover {
+			
+			color: $color01;
+			
+			@include transition (all 0.3s);
+		}
+		
+	}
+	
+	div.btns {
+		
+		float: right;
+		margin: 0 $gw-gutter ;
+		
+		a {
+		
+			background-repeat: no-repeat;
+			background-position: center center;
+			display: block;
+			float: left;
+			height: 38px;
+			margin-left: $gw-gutter;
+			text-indent: -9999px;
+		}
+		
+		a.GooglePaly {
+			
+			width: 115px;
+			
+			@include retina-image("../img/icon/android-app-on-google-play", 115px 38px);
+		}
+		
+		a.AppStore {
+		
+			width: 108px;
+			
+			@include retina-image("../img/icon/app_store_icon", 108px 38px);
+		}
+		
+		a.Twitter {
+			
+			width: 38px;
+			
+			@include retina-image("../img/icon/twitterLogo", 38px 38px);
+			
+		}
+		
+		a.gitHub {
+		
+			width: 73px;	
+			
+			@include retina-image("../img/icon/github", 73px 38px);
+			
+		}
+	
+	}
+	
+}
+
+
+/*** PROJECTSLIST ***/
+
+.projectsList {
+	
+	background-color: lighten(#eaeaea , 1%); 
+	border: $border;
+	overflow: hidden;
+	position: relative;
+	
+	@include border-radius(0 0 3px 3px); 
+			
+	ul {
+		
+		list-style-type: none;
+		margin: 0 auto;
+		padding: $gw-gutter * 1 0 $gw-gutter * 1 $gw-gutter * 1;
+		
+		li {
+			
+			background-color: lighten(#eaeaea , 15%); 
+			border: $border;
+			box-sizing: border-box;
+			float: left;
+			overflow: hidden;
+			margin-bottom: $gw-gutter * 1;
+			margin-right: $gw-gutter * 1;
+			position: relative;
+			width: $gw-column * 2;
+			
+			@include border-radius( 3px );
+			
+			img {
+				
+				height: ( $gw-column * 2 - $gw-gutter * 1) * 0.75;
+				margin: 0 $gw-gutter / 2 $gw-gutter / 2  $gw-gutter / 2 ;
+				
+				width: $gw-column * 2 - $gw-gutter * 1 ;
+				
+				@include border-radius( 3px );
+			}
+			
+			h4 {
+		 		
+		 		font-weight: normal;
+				line-height: $gw-grid;
+				height: $gw-grid;
+				margin: 0 $gw-gutter / 2;
+				overflow: hidden;
+				padding: 0;
+				text-indent: $gw-gutter /2;
+				
+			}
+			
+			span.sum {
+				
+				background-color: rgba(255,255,255,0.7);
+				font-size: $fontXS;
+				line-height: $gw-grid * 0.5;
+				height: $gw-grid * 0.5;
+				position: absolute;
+				right: $gw-gutter /2 ;
+				text-align: center;
+				text-shadow: 0px 1px 0px $colorFF;
+				top: $gw-grid + $gw-gutter/4 ;
+				width: 2em;
+				z-index: 2;
+				
+				@include border-radius( 3px );
+			}
+			
+			div.tools {
+				
+				background-color: rgba(255,255,255, 0.8);
+				bottom: 0;
+				height: $gw-grid ;
+				position: absolute;
+				width: 100%;
+				
+				@include border-radius(0 0 5px 5px);
+				
+				a {
+				
+					color: $color00;
+					display: block;
+					font-size: $fontXL;
+					height: 24px;
+					padding: 8px 0;
+					position: absolute;
+					right: 0;
+					text-align: center;
+					text-decoration: none;
+					text-shadow: 0px 1px 0px $colorFF;
+					width: 24px;
+					
+					@include transition (all 0.3s);
+					
+					&:hover {
+						
+						color: $red;
+						
+					}
+				}	
+				
+				a.download {
+				
+					right: $gw-gutter;				
+					
+				}
+				
+				a.trashCan {
+					
+					left: $gw-gutter;
+										
+				}
+				
+			}
+			
+		}
+	}
+}
+
+
+
+/* =============================================================================
+   TABLE
+   ========================================================================== */
+   
+   
+/*** TFOOTER ***/
+
+.tFooter  {
+	
+	border: $border;
+	border-top: 0;
+	height: $gw-grid;
+	margin: 0 0 $gw-gutter 0;
+	overflow: hidden;
+	position: relative;
+
+	@include border-radius(0 0 3px 3px);
+	@include linear-gradient(top, #fafafa , #dddddd);
+	
+	.btns {
+	
+		float: right;
+		line-height: $gw-grid ;
+		margin-right: $gw-gutter ;
+		
+		a {
+			
+			float: right;
+			margin-right: $gw-gutter ;
+		}
+		
+		.btn {
+			
+			@include button($color99);
+		}
+		
+		.btnPrimary {
+			
+			@include button($color01);
+		}
+	
+	}
+	
+}
+
+
+/*** THEADER ***/
+
+.tHeader {
+
+	border: $border;
+	height: $gw-grid;
+	line-height: $gw-grid;
+	margin: $gw-gutter 0 0 0;
+	overflow: hidden;
+	position: relative;
+	text-shadow: 0px 1px 0px $colorFF;
+	
+	@include border-radius(3px 3px 0 0);	
+	@include linear-gradient(top, #ffffff , #cccccc);
+								
+	h3 {
+	
+		color: $color01;
+		height: $gw-grid;
+		line-height: $gw-grid;
+		margin: 0;
+		padding: 0;
+		text-indent: 1em;
+		
+	}
+		
+	div.sideBlk {
+		
+		font-size: $fontS;
+		line-height: $gw-grid;
+		height: $gw-grid;
+		position: absolute;
+		top: 0;
+		right: $gw-gutter * 2;
+		
+		span {
+			
+			margin: 0 0.5em;
+		}
+	}
+
+}
+
+/*** HTABLE ***/
+
+.hTable {
+	
+	background-color: lighten(#eaeaea , 1%); 
+	border: 1px solid  darken($colorFF ,35%);
+	border-collapse: collapse;
+	display: table;
+	line-height: $gw-grid;
+	margin: 0 ;
+	padding: 0;	
+	width: 100%;
+	
+	th {
+		
+		background-color: lighten($color99 ,50%);
+		border: 1px solid  darken($colorFF ,35%);
+		border-top: 0;
+		color: darken( $color99 , 20%);
+		font-weight: normal;
+		text-align: right;
+		text-shadow: 1px 1px 2px darken($colorFF ,15%);
+		max-width: 240px;
+		padding: 0 $gw-gutter;
+		width: 20%;
+	}
+	
+	td {
+		
+		border: 1px solid  darken($colorFF ,35%);
+		text-align: left;
+		padding: 0 $gw-gutter;
+		
+	}
+	
+	tr:nth-child(even) td,
+	tr.even td  {
+	
+		background-color: lighten($color99 ,60%);
+
+	}
+	
+	tr:nth-child(even) th,
+	tr.even th  {
+	
+		background-color: lighten($color99 , 55%);
+
+	}
+	
+}
+
+
+
+
+
+
+
+
+
